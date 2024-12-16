@@ -3,40 +3,38 @@ session_start();
 
 // Handle sign out if form is submitted
 if (isset($_POST['sign_out'])) {
-    // Destroy the session
-    session_unset(); // Unset all session variables
-    session_destroy(); // Destroy the session
-
-    // Redirect to login page after sign out
+    session_unset();
+    session_destroy();
     header('Location: http://localhost/harjoitukset/valvonta_kamera/login.php');
     exit();
 }
 
-// Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     echo 'Et ole kirjautunut sisään';
     exit;
 }
 
-// Get the username from the session
-$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Unknown User'; // Default if not set
+$username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Unknown User';
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kameran Näkymä</title>
+    <link rel="stylesheet" href="koti.css">
 </head>
 <body>
-    <!-- Personalized greeting -->
-    <h1>Tervetuloa kameranäkymään, <?php echo htmlspecialchars($username); ?>!</h1>
-
     <!-- Sign Out Button -->
-    <form method="post">
+    <form method="post" class="sign-out-form">
         <input type="submit" name="sign_out" value="Sign Out">
     </form>
 
-    <!-- Camera view iframe -->
-    <iframe src="http://10.184.3.247:1880/ui" width="1024" height="768"></iframe>
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Tervetuloa kameranäkymään, <?php echo htmlspecialchars($username); ?>!</h1>
+        <iframe src="http://10.184.3.247:1880/ui"></iframe>
+    </div>
 </body>
 </html>

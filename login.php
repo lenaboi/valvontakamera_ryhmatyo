@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['kirjautuminen'])) {
                     </form>
 
                     <div class="links">
-                        <a href="http://localhost/harjoitukset/valvonta_kamera/signup.php" id="showSignUp">Sign Up</a> <!-- Link to show sign-up form -->
+                        <a href="http://localhost/php_harjoitukset/valvontakamera_ryhmatyo-master/login.php" id="showSignUp">Sign Up</a> <!-- Link to show sign-up form -->
                     </div>
                 </div>
             </div>

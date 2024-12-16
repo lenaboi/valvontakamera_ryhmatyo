@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";   // Tietokannan palvelin
 $username = "root";          // Tietokannan käyttäjänimi
-$password = "123";              // Tietokannan salasana
+$password = "";              // Tietokannan salasana
 $dbname = "valvonta_kamera"; // Tietokannan nimi
 
 // Luo yhteys
