@@ -26,15 +26,19 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Unknown User
     <link rel="stylesheet" href="koti.css">
 </head>
 <body>
-    <!-- Sign Out Button -->
-    <form method="post" class="sign-out-form">
-        <input type="submit" name="sign_out" value="Sign Out">
-    </form>
+<video autoplay muted loop id="background-video">
+    <source src="tausta.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<!-- Sign Out Button -->
+<form method="post" class="sign-out-form">
+    <input type="submit" name="sign_out" value="Kirjaudu ulos">
+</form>
 
-    <!-- Main Content -->
-    <div class="container">
-        <h1>Tervetuloa kameranäkymään, <?php echo htmlspecialchars($username); ?>!</h1>
-        <iframe src="http://10.184.3.247:1880/ui"></iframe>
-    </div>
+<!-- Main Content -->
+<div class="container">
+    <h1>Tervetuloa kameranäkymään, <?php echo htmlspecialchars($username); ?>!</h1>
+    <iframe src="http://10.184.3.247:1880/ui"></iframe>
+</div>
 </body>
 </html>

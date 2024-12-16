@@ -57,52 +57,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['rekisterointi'])) {
 }
 ?>
 
-
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="./style.css"> <!-- Link to your custom CSS file -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekisteröidy</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+    <!-- Taustavideo -->
+    <video autoplay muted loop id="background-video">
+        <source src="tausta.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-        <div class="signin">
-            <div class="content">
-                <h2>Sign Up</h2>
-                <div class="form">
-                    <!-- Sign Up Form -->
-                    <form method="post">
-                        <div class="inputBox">
-                            <input type="text" name="username" required>
-                            <i>Username</i>
-                        </div>
+    <!-- Rekisteröintilomake -->
+    <form method="post">
+        <div id="loginbox">
+            <h2>Rekisteröidy</h2>
 
-                        <div class="inputBox">
-                            <input type="password" name="salasana" required>
-                            <i>Password</i>
-                        </div>
+            <div class="inputBox">
+                <input type="text" name="username" required id="input" placeholder="Käyttäjätunnus">
+                <label for="username">Käyttäjätunnus</label>
+            </div>
 
-                        <div class="inputBox">
-                            <input type="password" name="confirm_salasana" required>
-                            <i>Confirm Password</i>
-                        </div>
+            <div class="inputBox">
+                <input type="password" name="salasana" required id="input" placeholder="Salasana">
+                <label for="salasana">Salasana</label>
+            </div>
 
-                        <div class="inputBox">
-                            <input type="submit" name="rekisterointi" value="Sign Up">
-                        </div>
-                    </form>
+            <div class="inputBox">
+                <input type="password" name="confirm_salasana" required id="input" placeholder="Vahvista salasana">
+                <label for="confirm_salasana">Vahvista salasana</label>
+            </div>
 
-                    <div class="links">
-                        <a href="http://localhost/harjoitukset/valvonta_kamera/signup.php" id="showLogin">Login</a> <!-- Link to show login form -->
-                    </div>
-                </div>
+            <div class="inputBox">
+                <input type="submit" name="rekisterointi" value="Rekisteröidy" id="loginbutton">
+            </div>
+
+            <div class="links">
+                <a href="login.php">Onko sinulla jo tili? Kirjaudu sisään</a>
             </div>
         </div>
-    </section>
+    </form>
+    
 </body>
-
 </html>

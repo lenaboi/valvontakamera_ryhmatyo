@@ -1,188 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-*
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
-}
-body 
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #000;
-}
-section 
-{
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
-section::before 
-{
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#000,#0f0,#000);
-  animation: animate 5s linear infinite;
-}
-@keyframes animate 
-{
-  0%
-  {
-    transform: translateY(-100%);
-  }
-  100%
-  {
-    transform: translateY(100%);
-  }
-}
-section span 
-{
-  position: relative;
-  display: block;
-  width: calc(6.25vw - 2px);
-  height: calc(6.25vw - 2px);
-  background: #181818;
-  z-index: 2;
-  transition: 1.5s;
-}
-section span:hover 
-{
-  background: #0f0;
-  transition: 0s;
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+/* Yleiset tyylit */
+body {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(2, 2, 2);
 }
 
-section .signin
-{
-  position: absolute;
-  width: 400px;
-  background: #222;  
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  border-radius: 4px;
-  box-shadow: 0 15px 35px rgba(0,0,0,9);
+/* Taustavideo */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
 }
-section .signin .content 
-{
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 40px;
+
+/* Kirjautumislomake */
+#loginbox {
+    background-color: rgba(72, 72, 72, 0.8);
+    width: 300px;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
-section .signin .content h2 
-{
-  font-size: 2em;
-  color: #0f0;
-  text-transform: uppercase;
+
+/* Header */
+#loginbox h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
 }
-section .signin .content .form 
-{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+
+/* Input box styling */
+.inputBox {
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
 }
-section .signin .content .form .inputBox
-{
-  position: relative;
-  width: 100%;
+
+/* Input field styling */
+.inputBox input {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 12px;
+    border: 2px solid #888; /* Light gray border */
+    background-color: #333; /* Dark gray background */
+    color: #ccc; /* Light gray text */
+    font-size: 16px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; /* Ensure input is above the label */
 }
-section .signin .content .form .inputBox input 
-{
-  position: relative;
-  width: 100%;
-  background: #333;
-  border: none;
-  outline: none;
-  padding: 25px 10px 7.5px;
-  border-radius: 4px;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1em;
+
+/* Placeholder text styling */
+.inputBox input::placeholder {
+    color: transparent; /* Hide the default placeholder */
 }
-section .signin .content .form .inputBox i 
-{
-  position: absolute;
-  left: 0;
-  padding: 15px 10px;
-  font-style: normal;
-  color: #aaa;
-  transition: 0.5s;
-  pointer-events: none;
+
+/* Label styling */
+.inputBox label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Ensure label doesn’t interfere with typing */
+    z-index: 2; /* Ensure label stays on top of the input field */
 }
-.signin .content .form .inputBox input:focus ~ i,
-.signin .content .form .inputBox input:valid ~ i
-{
-  transform: translateY(-7.5px);
-  font-size: 0.8em;
-  color: #fff;
+
+/* Focus styles */
+.inputBox input:focus {
+    border-color: #15d600; /* Green focus border */
+    outline: none;
+    background-color: #444; /* Slightly lighter gray when focused */
 }
-.signin .content .form .links 
-{
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+
+/* Label moves up when input is focused or filled */
+.inputBox input:focus ~ label,
+.inputBox input:not(:placeholder-shown) ~ label {
+    top: -15px;
+    font-size: 12px;
+    color: #15d600; /* Green color when focused or valid */
 }
-.signin .content .form .links a 
-{
-  color: #fff;
-  text-decoration: none;
-}
-.signin .content .form .links a:nth-child(2)
-{
-  color: #0f0;
+
+/* Submit button styling */
+#loginbutton {
+  font-family: 'Roboto Mono', monospace; /* Apply the same font as the rest of the page */
+  background-color: #15d600;
+  color: #000000;
+  font-size: 16px;
   font-weight: 600;
-}
-.signin .content .form .inputBox input[type="submit"]
-{
-  padding: 10px;
-  background: #0f0;
-  color: #000;
-  font-weight: 600;
-  font-size: 1.35em;
-  letter-spacing: 0.05em;
   cursor: pointer;
-}
-input[type="submit"]:active
-{
-  opacity: 0.6;
-}
-@media (max-width: 900px)
-{
-  section span 
-  {
-    width: calc(10vw - 2px);
-    height: calc(10vw - 2px);
-  }
-}
-@media (max-width: 600px)
-{
-  section span 
-  {
-    width: calc(20vw - 2px);
-    height: calc(20vw - 2px);
-  }
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
-/* Ensure the green color is applied to specific text */
-.signin .form .green-text {
-  color: white;
+#loginbutton:hover {
+  background-color: #ffffff;
+  color: black;
+  transition: 0.3s ease;
 }
 
+#loginbutton:focus {
+  outline: none;
+}
+
+
+/* Links styling */
+.links {
+    text-align: center;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.links a:hover {
+    color: #15d600;
+    transition: 0.3s ease;
+}
