@@ -5,7 +5,7 @@ session_start();
 if (isset($_POST['sign_out'])) {
     session_unset();
     session_destroy();
-    header('Location: http://localhost/harjoitukset/valvonta_kamera/login.php');
+    header('Location: http://localhost/php_harjoitukset/valvontakamera_ryhmatyo-master/login.php');
     exit();
 }
 

@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto Mono', sans-serif; /* Use the font you imported */
+  font-family: 'Roboto Mono', sans-serif; 
 }
 
 body {
@@ -23,7 +23,6 @@ body {
   background-color: rgb(2, 2, 2);
 }
 
-/* Taustavideo */
 #background-video {
   position: absolute;
   top: 0;

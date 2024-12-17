@@ -1,7 +1,5 @@
-/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
-/* Yleiset tyylit */
 body {
     font-family: 'Roboto Mono', monospace;
     margin: 0;
@@ -17,7 +15,6 @@ body {
     background-color: rgb(2, 2, 2);
 }
 
-/* Taustavideo */
 #background-video {
     position: absolute;
     top: 0;
@@ -29,7 +26,6 @@ body {
     pointer-events: none;
 }
 
-/* Kirjautumislomake */
 #loginbox {
     background-color: rgba(46, 46, 46, 0.8);
     width: 300px;
@@ -42,40 +38,35 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Header */
 #loginbox h2 {
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: 700;
 }
 
-/* Input box styling */
 .inputBox {
     width: 100%;
     position: relative;
     margin-bottom: 15px;
 }
 
-/* Input field styling */
 .inputBox input {
     width: 100%;
     padding: 15px 10px;
     border-radius: 12px;
-    border: 2px solid #888; /* Light gray border */
-    background-color: #333; /* Dark gray background */
-    color: #ccc; /* Light gray text */
+    border: 2px solid #888; 
+    background-color: #333; 
+    color: #ccc; 
     font-size: 16px;
     box-sizing: border-box;
     position: relative;
-    z-index: 1; /* Ensure input is above the label */
+    z-index: 1; 
 }
 
-/* Placeholder text styling */
 .inputBox input::placeholder {
-    color: transparent; /* Hide the default placeholder */
+    color: transparent; 
 }
 
-/* Label styling */
 .inputBox label {
     position: absolute;
     top: 50%;
@@ -84,28 +75,25 @@ body {
     font-size: 16px;
     color: #aaa;
     transition: all 0.3s ease;
-    pointer-events: none; /* Ensure label doesn’t interfere with typing */
-    z-index: 2; /* Ensure label stays on top of the input field */
+    pointer-events: none;
+    z-index: 2; 
 }
 
-/* Focus styles */
 .inputBox input:focus {
-    border-color: #2596be; /* Green focus border */
+    border-color: #2596be;
     outline: none;
-    background-color: #444; /* Slightly lighter gray when focused */
+    background-color: #444; 
 }
 
-/* Label moves up when input is focused or filled */
 .inputBox input:focus ~ label,
 .inputBox input:not(:placeholder-shown) ~ label {
     top: -15px;
     font-size: 12px;
-    color: #2596be; /* Green color when focused or valid */
+    color: #2596be;
 }
 
-/* Submit button styling */
 #loginbutton {
-  font-family: 'Roboto Mono', monospace; /* Apply the same font as the rest of the page */
+  font-family: 'Roboto Mono', monospace; 
   background-color: #2596be;
   color: #000000;
   font-size: 16px;
@@ -130,8 +118,6 @@ body {
   outline: none;
 }
 
-
-/* Links styling */
 .links {
     text-align: center;
     color: #ccc;
