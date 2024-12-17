@@ -31,7 +31,7 @@ body {
 
 /* Kirjautumislomake */
 #loginbox {
-    background-color: rgba(72, 72, 72, 0.8);
+    background-color: rgba(46, 46, 46, 0.8);
     width: 300px;
     padding: 40px;
     border-radius: 15px;
@@ -90,7 +90,7 @@ body {
 
 /* Focus styles */
 .inputBox input:focus {
-    border-color: #15d600; /* Green focus border */
+    border-color: #2596be; /* Green focus border */
     outline: none;
     background-color: #444; /* Slightly lighter gray when focused */
 }
@@ -100,13 +100,13 @@ body {
 .inputBox input:not(:placeholder-shown) ~ label {
     top: -15px;
     font-size: 12px;
-    color: #15d600; /* Green color when focused or valid */
+    color: #2596be; /* Green color when focused or valid */
 }
 
 /* Submit button styling */
 #loginbutton {
   font-family: 'Roboto Mono', monospace; /* Apply the same font as the rest of the page */
-  background-color: #15d600;
+  background-color: #2596be;
   color: #000000;
   font-size: 16px;
   font-weight: 600;
@@ -122,6 +122,7 @@ body {
 #loginbutton:hover {
   background-color: #ffffff;
   color: black;
+  transform: scale(1.01);
   transition: 0.3s ease;
 }
 
@@ -143,6 +144,6 @@ body {
 }
 
 .links a:hover {
-    color: #15d600;
+    color: #2596be;
     transition: 0.3s ease;
 }

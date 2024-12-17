@@ -38,7 +38,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Unknown User
 <!-- Main Content -->
 <div class="container">
     <h1>Tervetuloa kameranäkymään, <?php echo htmlspecialchars($username); ?>!</h1>
-    <iframe src="http://10.184.3.247:1880/ui"></iframe>
+    <iframe src="http://10.184.5.99:1880/ui"></iframe>
 </div>
 </body>
 </html>
